@@ -1,0 +1,165 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8f3;
+    color: #3d302b;
+}
+
+.header {
+    background-color: #ffffff;
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eadfd8;
+}
+
+.header h1 {
+    color: #b85c38;
+    font-size: 25px;
+}
+
+.header nav {
+    display: flex;
+    gap: 25px;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: #3d302b;
+    font-weight: bold;
+}
+
+.header nav a:hover {
+    color: #b85c38;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    background-color: #f3d6c7;
+    padding: 35px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.intro h2 {
+    color: #8f452b;
+    margin-bottom: 12px;
+}
+
+.intro p {
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.receita-form,
+.cadastro-box {
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.receita-form h2,
+.cadastro-box h2 {
+    margin-bottom: 10px;
+    color: #8f452b;
+}
+
+.receita-form form,
+.cadastro-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d8c8c0;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #b85c38;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.btn {
+    margin-top: 15px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #b85c38;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #963f21;
+}
+
+.btn-secundario {
+    margin-top: 12px;
+    padding: 9px 15px;
+    border: 1px solid #b85c38;
+    border-radius: 7px;
+    background-color: transparent;
+    color: #b85c38;
+    cursor: pointer;
+}
+
+.btn-secundario:hover {
+    background-color: #b85c38;
+    color: white;
+}
