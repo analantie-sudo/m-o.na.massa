@@ -68,7 +68,7 @@
 
             <p class="login-link">
                 Já possui uma conta?
-                <a href="receitas.html">Entrar</a>
+                <a href="index.entrar.php">Entrar</a> 
             </p>
 
         </section>
