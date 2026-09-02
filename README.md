@@ -19,3 +19,4 @@ user_fullname VARCHAR(180) NN
 email VARCHAR(150) NN
 password VARCHAR(225) NN 
 created_at TIMESTAMP
+profile_image VARCHAR(255)

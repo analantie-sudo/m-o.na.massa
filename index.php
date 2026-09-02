@@ -26,8 +26,7 @@
             </p>
 
             <form action="Controller/mmmController.php" method="POST">
-
-                <!-- Indica ao Controller que é um cadastro -->
+                
                 <input type="hidden" name="acao" value="cadastrar">
 
                 <label for="nome">Nome</label>

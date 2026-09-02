@@ -37,7 +37,6 @@ $receitas = Recipe::getByUser($_SESSION['user_id']);
 
     </header>
 
-
     <main class="container">
 
         <section class="intro">
@@ -52,90 +51,44 @@ $receitas = Recipe::getByUser($_SESSION['user_id']);
 
         </section>
 
-
-        <!-- FORMULÁRIO DE NOVA RECEITA -->
-
         <section class="receita-form">
-
             <h2>Adicionar nova receita</h2>
-
-            <form
-                action="../Controller/mmmController.php"
-                method="POST"
-                enctype="multipart/form-data"
-            >
-
-                <input
-                    type="hidden"
-                    name="acao"
-                    value="criarReceita"
-                >
-
+            <form action="../Controller/mmmController.php" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="acao" value="criarReceita">
 
                 <label for="titulo">
                     Nome da receita
                 </label>
 
-                <input
-                    type="text"
-                    id="titulo"
-                    name="titulo"
-                    placeholder="Ex: Bolo de chocolate"
-                    required
-                >
-
+                <input type="text" id="titulo" name="titulo" placeholder="Ex: Bolo de chocolate" required>
 
                 <label for="ingredientes">
                     Ingredientes
                 </label>
 
-                <textarea
-                    id="ingredientes"
-                    name="ingredientes"
-                    placeholder="Digite os ingredientes..."
-                    rows="4"
-                    required
-                ></textarea>
-
+                <textarea id="ingredientes" name="ingredientes" placeholder="Digite os ingredientes..." rows="4"
+                    required></textarea>
 
                 <label for="modo-preparo">
                     Modo de preparo
                 </label>
 
-                <textarea
-                    id="modo-preparo"
-                    name="modo_preparo"
-                    placeholder="Digite o modo de preparo..."
-                    rows="5"
-                    required
-                ></textarea>
-
+                <textarea id="modo-preparo" name="modo_preparo" placeholder="Digite o modo de preparo..." rows="5"
+                    required></textarea>
 
                 <label for="foto">
                     Foto da receita
                 </label>
 
-                <input
-                    type="file"
-                    id="foto"
-                    name="foto"
-                    accept="image/*"
-                >
+                <input type="file" id="foto" name="foto" accept="image/*">
 
-
-                <button
-                    type="submit"
-                    class="btn"
-                >
+                <button type="submit" class="btn">
                     + Adicionar receita
                 </button>
 
             </form>
 
         </section>
-
-
-        <!-- RECEITAS CADASTRADAS -->
 
         <section class="minhas-receitas">
 
@@ -160,10 +113,8 @@ $receitas = Recipe::getByUser($_SESSION['user_id']);
 
                                 <?php if (!empty($receita['image'])): ?>
 
-                                    <img
-                                        src="../<?= htmlspecialchars($receita['image']) ?>"
-                                        alt="<?= htmlspecialchars($receita['title']) ?>"
-                                    >
+                                    <img src="../<?= htmlspecialchars($receita['image']) ?>"
+                                        alt="<?= htmlspecialchars($receita['title']) ?>">
 
                                 <?php else: ?>
 
@@ -173,13 +124,11 @@ $receitas = Recipe::getByUser($_SESSION['user_id']);
 
                             </div>
 
-
                             <div class="receita-info">
 
                                 <h3>
                                     <?= htmlspecialchars($receita['title']) ?>
                                 </h3>
-
 
                                 <p>
 
@@ -213,6 +162,15 @@ $receitas = Recipe::getByUser($_SESSION['user_id']);
                                     ) ?>
 
                                 </p>
+
+                                <form action="../Controller/mmmController.php" method="POST">
+                                    <input type="hidden" name="acao" value="deletarReceita">
+                                    <input type="hidden" name="id" value="<?= $receita['id'] ?>">
+
+                                    <button type="submit" class="btn-perigo">
+                                        Excluir receita
+                                    </button>
+                                </form>
 
                             </div>
 

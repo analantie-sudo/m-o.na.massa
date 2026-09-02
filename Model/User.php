@@ -53,23 +53,38 @@ class User
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public static function updateProfile($id, $fullname, $email)
-    {
-        $connection = Connection::getConnection();
+  public static function updateProfile($id, $fullname, $email, $profile_image = null)
+{
+    $connection = Connection::getConnection();
+
+    if ($profile_image !== null) {
+
+        $sql = "UPDATE users
+                SET user_fullname = :fullname,
+                    email = :email,
+                    profile_image = :profile_image
+                WHERE id = :id";
+
+    } else {
 
         $sql = "UPDATE users
                 SET user_fullname = :fullname,
                     email = :email
                 WHERE id = :id";
-
-        $stmt = $connection->prepare($sql);
-
-        $stmt->bindValue(':fullname', $fullname);
-        $stmt->bindValue(':email', $email);
-        $stmt->bindValue(':id', $id);
-
-        return $stmt->execute();
     }
+
+    $stmt = $connection->prepare($sql);
+
+    $stmt->bindValue(':fullname', $fullname);
+    $stmt->bindValue(':email', $email);
+    $stmt->bindValue(':id', $id);
+
+    if ($profile_image !== null) {
+        $stmt->bindValue(':profile_image', $profile_image);
+    }
+
+    return $stmt->execute();
+}
 
     public static function updatePassword($id, $password)
     {

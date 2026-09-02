@@ -237,10 +237,61 @@ class mnmController
             die('Preencha todos os campos.');
         }
 
+        // FOTO DE PERFIL
+        $profileImage = null;
+
+        if (
+            isset($_FILES['foto_perfil']) &&
+            $_FILES['foto_perfil']['error'] === UPLOAD_ERR_OK
+        ) {
+
+            $extensao = strtolower(
+                pathinfo(
+                    $_FILES['foto_perfil']['name'],
+                    PATHINFO_EXTENSION
+                )
+            );
+
+            $extensoesPermitidas = [
+                'jpg',
+                'jpeg',
+                'png',
+                'webp'
+            ];
+
+            if (!in_array($extensao, $extensoesPermitidas)) {
+                die('Formato de imagem não permitido.');
+            }
+
+            $nomeImagem = uniqid('perfil_') . '.' . $extensao;
+
+            $pasta = __DIR__ .
+                '/../storage/uploads/profile/';
+
+            if (!is_dir($pasta)) {
+                mkdir($pasta, 0777, true);
+            }
+
+            $destino = $pasta . $nomeImagem;
+
+            if (
+                move_uploaded_file(
+                    $_FILES['foto_perfil']['tmp_name'],
+                    $destino
+                )
+            ) {
+
+                $profileImage =
+                    'storage/uploads/profile/' .
+                    $nomeImagem;
+            }
+        }
+
         $sucesso = User::updateProfile(
             $id,
             $nome,
-            $email
+            $email,
+            $profileImage
         );
 
         if ($sucesso) {

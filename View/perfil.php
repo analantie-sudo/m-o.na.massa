@@ -60,10 +60,18 @@ if (!$usuario) {
 
             <div class="foto-perfil">
 
-                <img 
-                    src="https://via.placeholder.com/150" 
-                    alt="Foto de perfil"
-                >
+                <?php if (!empty($usuario['profile_image'])): ?>
+
+    <img
+        src="../<?= htmlspecialchars($usuario['profile_image']) ?>"
+        alt="Foto de perfil"
+    >
+
+<?php else: ?>
+
+    <div class="sem-foto">👤</div>
+
+<?php endif; ?>
 
             </div>
 
@@ -78,10 +86,6 @@ if (!$usuario) {
             </p>
 
         </section>
-
-
-
-        <!-- EDITAR PERFIL -->
 
         <section class="config-box">
 
@@ -148,10 +152,6 @@ if (!$usuario) {
 
         </section>
 
-
-
-        <!-- ALTERAR SENHA -->
-
         <section class="config-box">
 
             <h2>Alterar Senha</h2>
@@ -215,10 +215,6 @@ if (!$usuario) {
 
         </section>
 
-
-
-        <!-- EXCLUIR CONTA -->
-
         <section class="config-box zona-perigo">
 
             <h2>Excluir Conta</h2>
@@ -248,9 +244,6 @@ if (!$usuario) {
             </form>
 
         </section>
-
-
-        <!-- SAIR -->
 
         <section class="config-box">
 
