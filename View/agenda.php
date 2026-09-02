@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minhas Receitas</title>
 
-    <!-- Ajuste no caminho do CSS (sem a barra inicial para evitar erro 404 local) -->
     <link rel="stylesheet" href="/templates/css/agenda.css">
 </head>
 
@@ -21,7 +20,7 @@
 
     <main class="container">
 
-        <!-- Introdução -->
+    
         <section class="intro">
             <h2>Organize suas receitas favoritas </h2>
             <p>
@@ -31,7 +30,6 @@
             </p>
         </section>
 
-        <!-- Formulario Criar Receita -->
         <section class="receita-form">
             <h2>Adicionar nova receita</h2>
 
@@ -89,7 +87,6 @@
             </form>
         </section>
 
-        <!-- Receitas cadastradas -->
         <section class="minhas-receitas">
             <h2>Minhas receitas</h2>
 

@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Perfil - Agenda de Receitas</title>
 
-    <!-- Caminho relativo para o CSS -->
     <link rel="stylesheet" href="/templates/css/perfil.css">
 </head>
 
 <body>
 
-    <!-- Cabeçalho Principal -->
     <header class="header">
         <h1>Agenda de Receitas</h1>
         <nav>
@@ -22,21 +20,17 @@
 
     <main class="container">
 
-        <!-- Informações Visuais do Perfil -->
         <section class="perfil">
             <div class="foto-perfil">
-                <!-- A imagem fica ajustada perfeitamente dentro do círculo -->
+                
                 <img src="https://via.placeholder.com/150" alt="">
                 
-                <!-- Caso o usuário não tenha enviado foto, você pode usar um texto/ícone fallback: -->
-                <!-- 👤 -->
             </div>
 
             <h2>Nome do Usuário</h2>
             <p class="email">usuario@email.com</p>
         </section>
 
-        <!-- Formulário: Editar Dados do Perfil -->
         <section class="config-box">
             <h2>Editar Perfil</h2>
 
@@ -54,7 +48,7 @@
             </form>
         </section>
 
-        <!-- Formulário: Mudar Senha -->
+       
         <section class="config-box">
             <h2>Alterar Senha</h2>
 
@@ -72,7 +66,6 @@
             </form>
         </section>
 
-        <!-- Zona de Exclusão de Conta -->
         <section class="config-box zona-perigo">
             <h2>Excluir Conta</h2>
             <p>Atenção: Ao excluir sua conta, todas as suas receitas salvas serão apagadas permanentemente.</p>

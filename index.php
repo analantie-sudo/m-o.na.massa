@@ -25,50 +25,53 @@
                 em um só lugar.
             </p>
 
-            <form>
+            <form action="Controller/mmmController.php" method="POST">
 
                 <label for="nome">Nome</label>
                 <input 
-                    type="text" 
-                    id="nome" 
+                    type="text"
+                    id="nome"
+                    name="user_fullname"
                     placeholder="Digite seu nome"
                     required
                 >
 
                 <label for="email">E-mail</label>
                 <input 
-                    type="email" 
-                    id="email" 
+                    type="email"
+                    id="email"
+                    name="email"
                     placeholder="Digite seu e-mail"
                     required
                 >
 
                 <label for="senha">Senha</label>
                 <input 
-                    type="password" 
-                    id="senha" 
+                    type="password"
+                    id="senha"
+                    name="password"
                     placeholder="Digite sua senha"
                     required
                 >
 
                 <label for="confirmar-senha">Confirmar senha</label>
                 <input 
-                    type="password" 
-                    id="confirmar-senha" 
+                    type="password"
+                    id="confirmar-senha"
+                    name="confirm_password"
                     placeholder="Confirme sua senha"
                     required
                 >
 
+                <button type="submit" class="btn">
+                    Criar conta
+                </button>
 
-                <form action=".../View/agenda.php" method="POST">
-                    <button type="submit" class="btn">
-                        Criar conta
-                    </button>
-                </form>
+            </form>
 
             <p class="login-link">
                 Já possui uma conta?
-                <a href="index.entrar.php">Entrar</a> 
+                <a href="/View/index.entrar.php">Entrar</a>
             </p>
 
         </section>

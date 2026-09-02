@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Agenda de Receitas</title>
 
-    <link rel="stylesheet" href="templates/css/index.css">
+    <link rel="stylesheet" href="/templates/css/index.entrar.css">
 </head>
 
 <body>
@@ -53,7 +53,7 @@
 
             <p class="login-link">
                 Ainda não possui uma conta?
-                <a href="index.php"> Cadastrar-se</a> 
+                <a href="../index.php"> Cadastrar-se</a> 
             </p>
 
         </section>

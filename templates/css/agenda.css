@@ -1,6 +1,4 @@
-/* =========================
-   ESTILOS GERAIS
-========================= */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #fcf8f6;
@@ -35,9 +33,7 @@ body {
     font-weight: bold;
 }
 
-/* =========================
-   FORMULÁRIO
-========================= */
+
 .receita-form {
     background: white;
     padding: 25px;
@@ -82,9 +78,7 @@ body {
     background-color: #733620;
 }
 
-/* =========================
-   CARDS DE RECEITAS
-========================= */
+
 .minhas-receitas {
     margin-top: 40px;
 }
