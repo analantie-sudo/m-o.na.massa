@@ -1,0 +1,20 @@
+{
+  "name": "m-o.na.massa",
+  "version": "1.0.0",
+  "description": "Banco de dados - Informações",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/analantie-sudo/m-o.na.massa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/analantie-sudo/m-o.na.massa/issues"
+  },
+  "homepage": "https://github.com/analantie-sudo/m-o.na.massa#readme"
+}
