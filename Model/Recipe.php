@@ -4,14 +4,14 @@ require_once __DIR__ . '/connection.php';
 
 class Recipe
 {
-    public static function create($title, $ingredients, $preparation, $image, $user_fk)
+    public static function create($title, $ingredients, $preparation, $image, $userid_fk)
     {
         $connection = Connection::getConnection();
 
         $sql = "INSERT INTO recipes
-                (title, ingredients, preparation, image, user_fk)
+                (title, ingredients, preparation, image, userid_fk)
                 VALUES
-                (:title, :ingredients, :preparation, :image, :user_fk)";
+                (:title, :ingredients, :preparation, :image, :userid_fk)";
 
         $stmt = $connection->prepare($sql);
 
@@ -19,7 +19,7 @@ class Recipe
         $stmt->bindValue(':ingredients', $ingredients);
         $stmt->bindValue(':preparation', $preparation);
         $stmt->bindValue(':image', $image);
-        $stmt->bindValue(':user_fk', $user_fk);
+        $stmt->bindValue(':userid_fk', $userid_fk);
 
         return $stmt->execute();
     }
@@ -51,30 +51,46 @@ class Recipe
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public static function getByUser($user_fk)
+    public static function getByUser($userid_fk)
     {
         $connection = Connection::getConnection();
 
         $sql = "SELECT * FROM recipes
-                WHERE user_fk = :user_fk
+                WHERE userid_fk = :userid_fk
                 ORDER BY created_at DESC";
 
         $stmt = $connection->prepare($sql);
-        $stmt->bindValue(':user_fk', $user_fk);
+        $stmt->bindValue(':userid_fk', $userid_fk);
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public static function delete($id)
+    public static function delete($id, $userid_fk)
     {
         $connection = Connection::getConnection();
 
         $sql = "DELETE FROM recipes
-                WHERE id = :id";
+                WHERE id = :id
+                AND userid_fk = :userid_fk";
 
         $stmt = $connection->prepare($sql);
+
         $stmt->bindValue(':id', $id);
+        $stmt->bindValue(':userid_fk', $userid_fk);
+
+        return $stmt->execute();
+    }
+
+    public static function deleteByUser($userid_fk)
+    {
+        $connection = Connection::getConnection();
+
+        $sql = "DELETE FROM recipes
+                WHERE userid_fk = :userid_fk";
+
+        $stmt = $connection->prepare($sql);
+        $stmt->bindValue(':userid_fk', $userid_fk);
 
         return $stmt->execute();
     }

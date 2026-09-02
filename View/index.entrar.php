@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Agenda de Receitas</title>
 
-    <link rel="stylesheet" href="/templates/css/index.entrar.css">
+    <link rel="stylesheet" href="../templates/css/index.entrar.css">
 </head>
 
 <body>
@@ -25,8 +25,11 @@
                 e organizar seu cardápio.
             </p>
 
-            <form action="View/agenda.php" method="POST">
-                
+            <form action="../Controller/mmmController.php" method="POST">
+
+                <!-- Indica ao Controller que é um login -->
+                <input type="hidden" name="acao" value="login">
+
                 <label for="email">E-mail</label>
                 <input 
                     type="email" 
@@ -46,14 +49,14 @@
                 >
 
                 <button type="submit" class="btn">
-                     Entrar
+                    Entrar
                 </button>
 
             </form>
 
             <p class="login-link">
                 Ainda não possui uma conta?
-                <a href="../index.php"> Cadastrar-se</a> 
+                <a href="../index.php">Cadastrar-se</a>
             </p>
 
         </section>

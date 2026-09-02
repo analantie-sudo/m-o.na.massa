@@ -7,6 +7,7 @@ class Connection
     public static function getConnection()
     {
         try {
+
             $connection = new PDO(
                 "mysql:host=" . DB_HOST .
                 ";port=" . DB_PORT .
@@ -25,7 +26,11 @@ class Connection
             return $connection;
 
         } catch (PDOException $e) {
-            die("Erro na conexão com o banco de dados: " . $e->getMessage());
+
+            die(
+                "Erro na conexão com o banco de dados: "
+                . $e->getMessage()
+            );
         }
     }
 }

@@ -27,11 +27,14 @@
 
             <form action="Controller/mmmController.php" method="POST">
 
+                <!-- Indica ao Controller que é um cadastro -->
+                <input type="hidden" name="acao" value="cadastrar">
+
                 <label for="nome">Nome</label>
                 <input 
                     type="text"
                     id="nome"
-                    name="user_fullname"
+                    name="nome"
                     placeholder="Digite seu nome"
                     required
                 >
@@ -49,7 +52,7 @@
                 <input 
                     type="password"
                     id="senha"
-                    name="password"
+                    name="senha"
                     placeholder="Digite sua senha"
                     required
                 >
@@ -58,7 +61,7 @@
                 <input 
                     type="password"
                     id="confirmar-senha"
-                    name="confirm_password"
+                    name="confirmar_senha"
                     placeholder="Confirme sua senha"
                     required
                 >
@@ -71,7 +74,7 @@
 
             <p class="login-link">
                 Já possui uma conta?
-                <a href="/View/index.entrar.php">Entrar</a>
+                <a href="View/index.entrar.php">Entrar</a>
             </p>
 
         </section>
